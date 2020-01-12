@@ -1,0 +1,209 @@
+/*  ===============
+    Font & color vars 
+    =============== */
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline|Chathura|Darker+Grotesque|Major+Mono+Display|Montserrat|Patrick+Hand+SC|Quicksand|Wire+One&display=swap');
+
+
+/*  ===============
+    General styles
+    =============== */
+
+body {
+    margin: 0;
+    background: #f4fae6; /*#ffe8ed;*/
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: #F7E7CE;
+}
+
+header::after {
+    content: '';
+    display: grid;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    padding: 20px;
+    width: 150px;
+}
+/*
+image: {
+    titleSrc: 'Jimin'
+} */
+/*  ===============
+    Nav bar
+    =============== */
+
+nav {
+    float: right;
+    flex: 1 1 40%;
+}
+
+nav ul {
+    margin: 0;
+    list-style: none;
+}
+
+/*remove stack, put in a line...*/
+nav li {
+    /*float: left;*/
+    display: inline-block; /*in line and more versatile- can use different text-align*/
+    margin-left: 15px;
+    padding-top: 50px;
+    
+    position: relative;
+}
+
+nav a {
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a: hover {
+    color: #000;
+}
+
+/*in the link before the text*/
+nav a::before {
+    content: '';
+    display: block;
+    height: 1.5px;
+    width: 70%; 
+    /*if width is 100% I need to add top:0*/
+    background-color: #A67B5B; /*bright pink #FB607F*/
+    
+    position: absolute;
+    
+    transition: all ease-in-out 250ms;
+   
+}
+
+nav a:hover::before {
+    width: 0;
+}
+
+/*  ===============
+    Main content
+    =============== */
+
+.main-content {
+    padding: 10%;
+    min-height: 100%;
+    flex: 1 1 100%;
+}
+
+.halfContainer {
+    padding: 10px;
+    max-width: 50%;
+}
+
+/*  ===============
+    Portfolio
+    =============== */
+
+.portfolio {
+    display: grid;
+    height: 100%;
+    /*height: 100% wont' fill..*/
+    /*1fr fills up space*/
+    /*grid-template-rows: repeat(9, 1fr);*/
+    /*grid-template-columns: repeat(4, 1fr);*/
+    grid-template-rows: 10;
+    grid-template-columns: 4;
+    grid-gap: 20px;
+}
+
+.portfolio-item {
+    background: #ffede0;
+    /* light pink: #ffadbf #ffc9d5 #ffd4dd*/
+    padding: 10px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Major Mono Display', sans-serif;
+
+}
+
+.portfolio-item.small {
+    grid-row: span 1;
+    grid-column: span 2;
+}
+
+.portfolio-item.smallEmpty {
+    grid-row: span 1;
+    grid-column: span 2;
+    background: none;
+}
+    
+.portfolio-item.medium {
+    grid-row: span 2; 
+    grid-column: span 3;
+}
+ 
+.portfolio-item.mediumEmpty {
+    grid-row: span 3; 
+    grid-column: span 1;
+    background: none;
+}
+
+.portfolio-item.large {
+    grid-row: span 2; 
+    grid-column: span 4;
+}
+
+.portfolio-item.tall {
+    grid-row: span 2; 
+    grid-column: span 2;
+}
+
+.portfolio-item.tallEmpty {
+    grid-row: span ; 
+    grid-column: span 2;
+}
+.portfolio-item.wide {
+    grid-row: span 1; 
+    grid-column: span 3;
+}
+
+.portfolio-item.extraWide {
+    grid-row: span 1; 
+    grid-column: span 4;
+    
+}
+
+.portfolio-item.portrait {
+    grid-row: span 3; 
+    grid-column: span 4;
+}
+
+$('.content').magnificPopup({ 
+        type: 'image', 
+        delegate: 'a', 
+        closeOnContentClick: true,
+        arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+        tPrev: 'Previous (Left arrow key)', // title for left button
+        content:{
+            enabled: true
+        }
+    });
+
+/*prevents any jQuery code from running before the page is ready*/
+$(document).ready(function(){
+
+  /*jQuery methods go here...*/
+
+});
