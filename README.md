@@ -1,5 +1,5 @@
 # seeside
-Portfolio
+Digital Portfolio of My Works
 
 very simple 4 page site to showcase some of my art. 
 Includes Home (Index), Gallery, About, & Contact pages.
